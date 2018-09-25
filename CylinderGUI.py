@@ -1,5 +1,11 @@
 import tkinter as tk
 
+def submit():
+	print("Submit pressed")
+	r = float(entr.get())
+	h = float(enth.get())
+
+
 root = tk.Tk()
 root.title("Volume of a Cylinder")
 
@@ -15,12 +21,18 @@ labh.pack()
 enth = tk.Entry(root)
 enth.pack()
 
-btn = tk.Button(root, text="Submit")
+btn = tk.Button(root, text="Submit", command=submit)
 btn.pack()
 
 #width = 50, height = 10 are called named parameters. 
 output = tk.Text(root, height =10, width = 50, borderwidth=3, relief=tk.GROOVE)
 output.config(state="disabled")
 output.pack()
+
+
+
+
+
+
 
 root.mainloop()
