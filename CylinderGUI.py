@@ -9,8 +9,16 @@ def submit():
 	v = math.pi*r*r*h
 	v = round(v,3)
 	output.config(state="normal")
-	output.insert(tk.INSERT,v)
+	
+	outputValue = "Given\nradius:"+str(r)+" units\nheight"+str(h)+" units\nThe volume is"+str(v)+" units cubed\n\n"
+
+
+	out.elete(1.0,tk.END)
+	output.insert(tk.INSERT,outputVolume)
 	output.config(state="disabled")
+
+
+
 #Input
 root = tk.Tk()
 root.title("Volume of a Cylinder")
