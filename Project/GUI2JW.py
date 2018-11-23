@@ -4,7 +4,7 @@ import tkinter as tk
 
 
 root = tk.Tk()
-
+########   Quiz Code
 titlelabel = tk.Label(root, text = "MATH QUIZ", font=("Helvetica",16), background = "purple", foreground = "white")
 titlelabel.grid(row = 0, column = 0, columnspan = 2)
 
@@ -36,4 +36,25 @@ btnGo = tk.Button(root, text = "CHECK ANSWERS")
 btnGo.grid(row = 5, column = 1,)
 
 
+questionFrame = tk.LabelFrame(root,text = "Question")
+questionFrame.grid(row = 0, column = 0)
+
+calcFrame = tk.LabelFrame(root,text = "Calculator")
+calcFrame.grid(row = 0, column = 2)
+
+#****************Question Frame
+
+
+def bttnClicked():
+	num1 = input("Enter a number:")
+	num2 = input("Enter a number:")
+
+	result = int(num1) * int(num2)
+	print (result)
+
+#****************Calc Frame
+cfBtn1 = tk.Button(calcFrame,text = "Button", command = bttnClicked)
+cfBtn1.pack()
+
 root.mainloop()
+
