@@ -5,7 +5,7 @@ import tkinter as tk
 
 root = tk.Tk()
 ########   Quiz Code
-titlelabel = tk.Label(root, text = "MATH QUIZ", font=("Helvetica",16), background = "purple", foreground = "white")
+titlelabel = tk.Label(root, text = "MATH QUIZ", font=("Helvetica",16), background = "blue", foreground = "white")
 titlelabel.grid(row = 0, column = 0, columnspan = 2)
 
 
