@@ -1,10 +1,38 @@
 
 
 import tkinter as tk 
-
+import random
 
 root = tk.Tk()
 ########   Quiz Code
+
+#****************Question Frame
+#We need to store the actual questions
+#We can randomzie the questions by doing the following
+operators = ["+","-","*","/"]
+q1 = []
+q1.append(random.randint(1,12))
+opt = operators[random.randint(0,3)]
+q1.append(opt)
+q1.append(random.randint(1,12))
+print(q1)
+
+
+
+def bttnClicked(*args):
+
+	print("bttnClicked")
+
+	'''num1 = input("Enter a number:")
+	num2 = input("Enter a number:")
+
+	result = int(num1) * int(num2)
+	print (result)'''
+
+
+def checkAnswerfnc(*args):
+	print("running checkAnswerfun")
+
 titlelabel = tk.Label(root, text = "MATH QUIZ", font=("Helvetica",16), background = "blue", foreground = "white")
 titlelabel.grid(row = 0, column = 0, columnspan = 2)
 
@@ -12,8 +40,11 @@ titlelabel.grid(row = 0, column = 0, columnspan = 2)
 output = tk.Text(root, height = 10, width = 50)
 output.config(state = "disable")
 output.grid(row = 1, column = 0, columnspan = 2)
+question = ""
+for i in range(0, len(q1),1):
+	question = question + str(q1[i])
 
-word1Label = tk.Label(root, text = "7 x 7", foreground = "blue")
+word1Label = tk.Label(root, text = question, foreground = "blue")
 word1Label.grid(row = 2, column = 0, sticky = "NESW")
 
 word2Label = tk.Label(root, text = "8 x 8 x 2", foreground = "blue")
@@ -32,7 +63,7 @@ ent2.grid(row = 3, column = 1)
 ent3 = tk.Entry(root)
 ent3.grid(row = 4, column = 1)
 
-btnGo = tk.Button(root, text = "CHECK ANSWERS")
+btnGo = tk.Button(root, text = "CHECK ANSWERS", command = checkAnswerfnc)
 btnGo.grid(row = 5, column = 1,)
 
 
@@ -42,15 +73,7 @@ questionFrame.grid(row = 0, column = 0)
 calcFrame = tk.LabelFrame(root,text = "Calculator")
 calcFrame.grid(row = 0, column = 2)
 
-#****************Question Frame
 
-
-def bttnClicked():
-	num1 = input("Enter a number:")
-	num2 = input("Enter a number:")
-
-	result = int(num1) * int(num2)
-	print (result)
 
 #****************Calc Frame
 cfBtn1 = tk.Button(calcFrame,text = "Button", command = bttnClicked)
