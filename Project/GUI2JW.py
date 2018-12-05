@@ -17,6 +17,23 @@ q1.append(opt)
 q1.append(random.randint(1,12))
 print(q1)
 
+q2 = []
+q2.append(random.randint(1,12))
+opt = operators[random.randint(0,3)]
+q2.append(opt)
+q2.append(random.randint(1,12))
+print(q2)
+
+question2 = ""
+
+q3 = []
+q3.append(random.randint(1,12))
+opt = operators[random.randint(0,3)]
+q3.append(opt)
+q3.append(random.randint(1,12))
+print(q3)
+
+question3 = ""
 
 
 def bttnClicked(*args):
@@ -43,14 +60,18 @@ output.grid(row = 1, column = 0, columnspan = 2)
 question = ""
 for i in range(0, len(q1),1):
 	question = question + str(q1[i])
+for i in range(0, len(q2), 1):
+	question2 = question2 + str(q2[i])
+for i in range(0, len(q3),1):
+	question3 = question3 + str(q3 [i])
 
 word1Label = tk.Label(root, text = question, foreground = "blue")
 word1Label.grid(row = 2, column = 0, sticky = "NESW")
 
-word2Label = tk.Label(root, text = "8 x 8 x 2", foreground = "blue")
+word2Label = tk.Label(root, text = question2 ,foreground = "blue")
 word2Label.grid(row = 3, column = 0)
 
-word3Label = tk.Label(root, text = "63 x 2", foreground = "blue")
+word3Label = tk.Label(root, text = question3 , foreground = "blue")
 word3Label.grid(row = 4, column = 0)
 
 
