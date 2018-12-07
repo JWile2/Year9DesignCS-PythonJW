@@ -48,7 +48,22 @@ def bttnClicked(*args):
 
 
 def checkAnswerfnc(*args):
-	print("running checkAnswerfun")
+	print(q1)
+	print(q2)
+	print(q3)
+
+	#Check Question 1
+	if(q1[1] == "*" and q1[0] * q1[2] == int(ent1.get())) or (q1[1] == "-" and q1[0] - q1[2] == int(ent1.get())) or (q1[1] == "+" and q1[0] + q1[2] == int(ent1.get())) or (q1[1] == "/" and q1[0] / q1[2] == int(ent1.get())): 
+		print("Question 1 Correct")
+	if(q2[1] == "*" and q2[0] * q2[2] == int(ent2.get())) or (q2[1] == "-" and q2[0] - q2[2] == int(ent2.get())) or (q2[1] == "+" and q2[0] + q2[2] == int(ent2.get())) or (q2[1] == "/" and q2[0] / q2[2] == int(ent2.get())): 
+		print("Question 2 Correct")
+	if(q3[1] == "*" and q3[0] * q3[2] == int(ent3.get())) or (q3[1] == "-" and q3[0] - q3[2] == int(ent3.get())) or (q3[1] == "+" and q3[0] + q3[2] == int(ent3.get())) or (q3[1] == "/" and q3[0] / q3[2] == int(ent3.get())): 
+		print("Question 3 Correct")
+
+
+
+
+	print("running checkAnswerFnc")
 
 titlelabel = tk.Label(root, text = "MATH QUIZ", font=("Helvetica",16), background = "blue", foreground = "white")
 titlelabel.grid(row = 0, column = 0, columnspan = 2)
