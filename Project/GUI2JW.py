@@ -1,8 +1,8 @@
 
-
 import tkinter as tk 
 import random
-
+def checkanswerfnc(*args):
+	print ("CheckAnswer")
 root = tk.Tk()
 ########   Quiz Code
 
@@ -17,6 +17,8 @@ q1.append(opt)
 q1.append(random.randint(1,12))
 print(q1)
 
+question1 = ""
+
 q2 = []
 q2.append(random.randint(1,12))
 opt = operators[random.randint(0,3)]
@@ -27,10 +29,12 @@ print(q2)
 question2 = ""
 
 q3 = []
-q3.append(random.randint(1,12))
-opt = operators[random.randint(0,3)]
+n = random.randint(1,12)
+x = random.randint(1, 5)
+q3.append(n*x)
+opt = operators[3]
 q3.append(opt)
-q3.append(random.randint(1,12))
+q3.append(n)
 print(q3)
 
 question3 = ""
@@ -45,25 +49,30 @@ def bttnClicked(*args):
 
 	result = int(num1) * int(num2)
 	print (result)'''
-
+#ansR = int(0)
 
 def checkAnswerfnc(*args):
 	print(q1)
 	print(q2)
 	print(q3)
 
+
 	#Check Question 1
 	if(q1[1] == "*" and q1[0] * q1[2] == int(ent1.get())) or (q1[1] == "-" and q1[0] - q1[2] == int(ent1.get())) or (q1[1] == "+" and q1[0] + q1[2] == int(ent1.get())) or (q1[1] == "/" and q1[0] / q1[2] == int(ent1.get())): 
 		print("Question 1 Correct")
+		#ansR = ansR +1
 	if(q2[1] == "*" and q2[0] * q2[2] == int(ent2.get())) or (q2[1] == "-" and q2[0] - q2[2] == int(ent2.get())) or (q2[1] == "+" and q2[0] + q2[2] == int(ent2.get())) or (q2[1] == "/" and q2[0] / q2[2] == int(ent2.get())): 
 		print("Question 2 Correct")
+		#ansR = ansR +1
+
 	if(q3[1] == "*" and q3[0] * q3[2] == int(ent3.get())) or (q3[1] == "-" and q3[0] - q3[2] == int(ent3.get())) or (q3[1] == "+" and q3[0] + q3[2] == int(ent3.get())) or (q3[1] == "/" and q3[0] / q3[2] == int(ent3.get())): 
 		print("Question 3 Correct")
+		#ansR = ansR +1
 
 
 
 
-	print("running checkAnswerFnc")
+	print("Your right")
 
 titlelabel = tk.Label(root, text = "MATH QUIZ", font=("Helvetica",16), background = "blue", foreground = "white")
 titlelabel.grid(row = 0, column = 0, columnspan = 2)
@@ -106,14 +115,10 @@ btnGo.grid(row = 5, column = 1,)
 questionFrame = tk.LabelFrame(root,text = "Question")
 questionFrame.grid(row = 0, column = 0)
 
-calcFrame = tk.LabelFrame(root,text = "Calculator")
-calcFrame.grid(row = 0, column = 2)
+textbox = tk.Text(root, width = 30, height = 10)
+textbox.grid(row = 1, column = 0, columnspan = 2, padx = 15, pady = 15)
 
 
-
-#****************Calc Frame
-cfBtn1 = tk.Button(calcFrame,text = "Button", command = bttnClicked)
-cfBtn1.pack()
 
 root.mainloop()
 
