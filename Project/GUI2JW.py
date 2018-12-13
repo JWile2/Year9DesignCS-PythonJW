@@ -72,7 +72,7 @@ def checkAnswerfnc(*args):
 
 
 
-	print("Your right")
+
 
 titlelabel = tk.Label(root, text = "MATH QUIZ", font=("Helvetica",16), background = "blue", foreground = "white")
 titlelabel.grid(row = 0, column = 0, columnspan = 2)
@@ -115,10 +115,12 @@ btnGo.grid(row = 5, column = 1,)
 questionFrame = tk.LabelFrame(root,text = "Question")
 questionFrame.grid(row = 0, column = 0)
 
-textbox = tk.Text(root, width = 30, height = 10)
-textbox.grid(row = 1, column = 0, columnspan = 2, padx = 15, pady = 15)
 
+
+logo = tk.PhotoImage(file = "Math2.png")
+logoImage = tk.Label(image = logo)
+logoImage.config(background = "white")
+logoImage.grid(row = 0, column = 1, columnspan = 1)
 
 
 root.mainloop()
-
